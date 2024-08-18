@@ -1,4 +1,3 @@
-import { useState } from "react";
 import urlJoin from "url-join";
 import { BASE_URL } from "./constants";
 import { useQuery } from "@tanstack/react-query";
