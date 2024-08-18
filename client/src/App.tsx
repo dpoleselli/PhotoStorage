@@ -1,14 +1,26 @@
 import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Home } from "./pages/Home";
+import { Photos } from "./pages/Photos";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-export default () => {
-  return <RouterProvider router={router} />;
+const queryClient = new QueryClient();
+
+export const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 };
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/photos",
+    element: <Photos />,
   },
   {
     path: "*",
